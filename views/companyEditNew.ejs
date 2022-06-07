@@ -1,0 +1,22 @@
+<%- include ('header') -%>
+
+  <h1>Vállalat 
+    <% if (typeof company === 'undefined') { %>
+      létrehozás
+    <% }else{ %>
+        módosítás
+    <% } %>
+  </h1>
+
+  <form action method="POST">
+    <label for="name">Vállalatnév:</label>
+    <input type="text" name="name" id="name"
+            value="<%= (typeof company === 'undefined') ? '' : company.name %>"><br><br>
+    <label for="site">Telephely:</label>
+    <input type="text" name="site" id="site"
+            value="<%= (typeof company === 'undefined') ? '' : company.site %>"><br><br>
+    <input type="submit" value="Mentés">
+    <a href="/">Mégsem</a>
+  </form>
+
+<%- include ('footer') -%>

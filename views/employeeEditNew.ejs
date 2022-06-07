@@ -1,0 +1,25 @@
+<%- include ('header') -%>
+
+  <h1>Alkalmazott
+    <% if (typeof employee === 'undefined') { %>
+      létrehozás
+    <% }else{ %>
+        módosítás
+    <% } %>
+  </h1>
+
+  <form action method="POST">
+    <label for="name">Alkalmazott neve:</label>
+    <input type="text" name="name" id="name"
+          value="<%= (typeof employee === 'undefined') ? '' : employee.name %>"><br><br>
+    <label for="type">Telefon típus:</label>
+    <input type="text" name="telephone" id="telephone"
+          value="<%= (typeof employee === 'undefined') ? '' : employee.telephone %>"><br><br>
+    <label for="number">Telefonszám:</label>
+    <input type="text" name="telephoneNumber" id="telephoneNumber"
+          value="<%= (typeof employee === 'undefined') ? '' : employee.telephoneNumber %>"><br><br>
+    <input type="submit" value="Mentés">
+    <a href="/employee/<%= company._id%>">Mégsem</a>
+  </form>
+
+  <%- include ('footer') -%>

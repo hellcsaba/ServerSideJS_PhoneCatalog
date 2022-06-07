@@ -1,0 +1,39 @@
+<%- include ('header') -%>
+  <h1>Alkalmazottak és elérhetőségük</h1>
+  <a href="/employee/<%= company._id %>/new">Új alkalmazott hozzáadása</a>
+  <a href="/">Vissza</a>
+  <table>
+    <thead>
+      <tr>
+       <th>Alkalmazott neve</th>
+       <th>Telefon típus</th>
+       <th>Telefonszám</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% employees.forEach(function(employee){ %>
+        <tr>
+            <td>
+                <%= employee.name %>
+            </td>
+            <td>
+                <%= employee.telephone %>
+            </td>
+            <td>
+                <%= employee.telephoneNumber %>
+            </td>
+            <td>
+                <a href="/employee/<%= company._id %>/edit/<%= employee._id %>">Szerkesztés</a>
+            </td>
+            <td>
+              <form action = "/employee/<%= company._id %>/delete/<%= employee._id %>" method = "get">
+                <button type="submit">Törlés</button>
+              </form>
+            </td>
+        </tr>
+    <% }); %>      
+    </tbody>
+  </table>
+
+<%- include ('footer') -%>

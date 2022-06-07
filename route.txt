@@ -1,0 +1,21 @@
+Vállalatok és az alkalmazottaikhoz tartozó cégestelefonok
+- index.html - vállalatok táblázatban(edit, delete, megtekintés), új vállalat hozzáadása
+- companyEditNew.html - vállalat adatok edit + save + cancel
+- employee.html - alkalmazottak táblázatban (edit, delete), új alkalmazott hozzáadása
+- employeeEditNew.html - employee adatok edit + save + cancel
+
+
+Routing
+
+Method		Route				                    Description					                        Html
+
+GET         /				                        - company-k megjelenítése			                index.html
+GET, POST 	/company/new 			                - company létrehozása				                companyEditNew.html (new) 
+GET, POST 	/company/edit/:companyid 	            - company szerkesztése				                companyEditNew.html (edit)
+GET 		/company/delete/:companyid		        - company törlése
+
+
+GET 			                                    - company-hez tartozó employee-k megjelenítése	    employee.html
+GET, POST /employee/:companyid/new	                - employee létrehozása				                employeeEditNew.html (new)
+GET, POST /employee/:companyid/edit/:employeeid	    - employee szerkesztése				                employeeEditNew.html (edit)	
+GET /employee/:companyid/delete/:employeeid	        - employee törlése
